@@ -5,7 +5,6 @@ from twisted.internet.defer import Deferred, inlineCallbacks
 from twisted.web.resource import Resource
 from twisted.web.server import NOT_DONE_YET
 from twisted.python.failure import Failure
-from twisted.python.log import logging
 
 DEFAULT_404_HTML = '<html><head><title>404 Not Found</title></head>' \
         '<body><h1>Not found</h1></body></html>'
