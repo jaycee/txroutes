@@ -87,11 +87,13 @@ class Dispatcher(Resource):
     def getChild(self, name, request):
         return self
 
-    def render(self, request):
+    def setPrefix(self, prefix):
+        self.__mapper.prefix = prefix
 
+    def render(self, request):
         wsgi_environ = {}
-        wsgi_environ['REQUEST_METHOD'] = request.method
-        wsgi_environ['PATH_INFO'] = request.path
+        wsgi_environ['REQUEST_METHOD'] = request.method.decode("utf-8")
+        wsgi_environ['PATH_INFO'] = "/" + b"/".join(request.prepath).decode("utf-8")
 
         result = self.__mapper.match(environ=wsgi_environ)
 
