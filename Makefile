@@ -1,5 +1,6 @@
 dist:
 	python3 setup.py bdist
+	python3 setup.py sdist
 
 .PHONY: build
 build: dist
