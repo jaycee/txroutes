@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='txroutes',
-        version='0.1.1',
+        version='0.1.2',
         author='Olark',
         url='http://github.com/olark/txroutes',
         description='Provides routes-like dispatching for twisted.web.server',
